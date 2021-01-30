@@ -1,1 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+  font-family: 'Noto Serif TC', serif;
+}
+
+:root {
+  --layout-max-width: 900px;
+  --header-height: 72px;
+  --picture-size: 40px;
+  --picture-size-x: 50px;
+  --icon-size: 36px;
+  --bar-width: 24px;
+
+  --words: #e76f51;
+  --time: #f4a261;
+  --gifts: #e9c46a;
+  --acts: #2a9d8f;
+  --touch: #264653;
+}

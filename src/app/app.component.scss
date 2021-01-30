@@ -1,0 +1,143 @@
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+@import '~bootstrap/scss/mixins/_breakpoints';
+
+.layout {
+  width: 100%;
+  max-width: var(--layout-max-width);
+}
+
+header {
+  height: var(--header-height);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+main {
+  min-height: calc(100vh + var(--header-height) * -1);
+}
+main section {
+  max-width: 100%;
+}
+
+// profile-pictures
+.profile-pictures {
+  height: var(--header-height);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #fff;
+}
+.picture {
+  margin: 2px;
+
+  cursor: pointer;
+}
+.picture img {
+  border: 2px solid #eee;
+  border-radius: 50%;
+
+  padding: 2px;
+  width: var(--picture-size);
+
+  transition: width 0.3s;
+}
+.picture:hover img {
+  width: var(--picture-size-x);
+}
+.picture.active img {
+  width: var(--picture-size-x);
+  border-color: goldenrod;
+}
+
+// bar-chart
+.bar {
+  width: var(--bar-width);
+  height: 300px;
+  border-radius: 12px;
+
+  position: relative;
+
+  background-color: #eee;
+}
+.bar .score {
+  width: var(--bar-width);
+  border-radius: 12px;
+
+  position: absolute;
+  bottom: 0;
+
+  transition: height 0.6s;
+}
+.score .score-number {
+  width: var(--icon-size);
+  height: var(--icon-size);
+  border: 2px solid #fff;
+  border-radius: 50%;
+
+  position: absolute;
+  top: calc((var(--icon-size) * -1) / 2);
+  left: calc((var(--bar-width) + var(--icon-size) * -1) / 2);
+  right: calc((var(--bar-width) + var(--icon-size) * -1) / 2);
+
+  color: #fff;
+}
+
+.bar:nth-child(1) .score,
+.bar:nth-child(1) .score-number,
+.lang:nth-child(1) .icon {
+  background-color: var(--words);
+}
+.bar:nth-child(2) .score,
+.bar:nth-child(2) .score-number,
+.lang:nth-child(2) .icon {
+  background-color: var(--time);
+}
+.bar:nth-child(3) .score,
+.bar:nth-child(3) .score-number,
+.lang:nth-child(3) .icon {
+  background-color: var(--gifts);
+}
+.bar:nth-child(4) .score,
+.bar:nth-child(4) .score-number,
+.lang:nth-child(4) .icon {
+  background-color: var(--acts);
+}
+.bar:nth-child(5) .score,
+.bar:nth-child(5) .score-number,
+.lang:nth-child(5) .icon {
+  background-color: var(--touch);
+}
+
+// langs
+.lang .icon {
+  width: var(--icon-size);
+  height: var(--icon-size);
+  border-radius: 50%;
+
+  color: #fff;
+}
+
+@include media-breakpoint-down(sm) {
+  main {
+    margin-bottom: var(--header-height);
+  }
+  header {
+    justify-content: center;
+  }
+
+  // profile-pictures
+  .profile-pictures {
+    width: 100%;
+    border-top: 2px solid #eee;
+
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+  }
+}

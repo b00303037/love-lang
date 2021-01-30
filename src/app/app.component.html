@@ -1,0 +1,93 @@
+<div class="layout px-3 m-auto">
+  <header>
+    <h2>我的愛之語</h2>
+
+    <div class="profile-pictures">
+      <div
+        *ngFor="let profile of profiles"
+        class="picture"
+        [class.active]="selected === profile"
+        (click)="changeProfile(profile)"
+      >
+        <img [src]="profile.pictureUrl" [alt]="profile.name" />
+      </div>
+    </div>
+  </header>
+
+  <main
+    class="d-flex flex-column flex-md-row justify-content-center align-items-center"
+  >
+    <section class="w-100 w-md-50 d-flex justify-content-center py-3 px-md-3">
+      <!-- 肯定的言詞 -->
+      <div class="bar mx-3">
+        <div class="score" [style.height]="(scores.words * 100) / 12 + '%'">
+          <div
+            class="score-number d-flex justify-content-center align-items-center"
+          >
+            {{ scores.words }}
+          </div>
+        </div>
+      </div>
+
+      <!-- 精心的時刻 -->
+      <div class="bar mx-3">
+        <div class="score" [style.height]="(scores.time * 100) / 12 + '%'">
+          <div
+            class="score-number d-flex justify-content-center align-items-center"
+          >
+            {{ scores.time }}
+          </div>
+        </div>
+      </div>
+
+      <!-- 接受禮物 -->
+      <div class="bar mx-3">
+        <div class="score" [style.height]="(scores.gifts * 100) / 12 + '%'">
+          <div
+            class="score-number d-flex justify-content-center align-items-center"
+          >
+            {{ scores.gifts }}
+          </div>
+        </div>
+      </div>
+
+      <!-- 服務的行動 -->
+      <div class="bar mx-3">
+        <div class="score" [style.height]="(scores.acts * 100) / 12 + '%'">
+          <div
+            class="score-number d-flex justify-content-center align-items-center"
+          >
+            {{ scores.acts }}
+          </div>
+        </div>
+      </div>
+
+      <!-- 身體的接觸 -->
+      <div class="bar mx-3">
+        <div class="score" [style.height]="(scores.touch * 100) / 12 + '%'">
+          <div
+            class="score-number d-flex justify-content-center align-items-center"
+          >
+            {{ scores.touch }}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="w-100 w-md-50 d-flex flex-column justify-content-center py-3 px-md-3"
+    >
+      <div *ngFor="let lang of langs" class="lang d-flex align-items-start">
+        <div
+          class="icon flex-shrink-0 d-flex justify-content-center align-items-center mr-3"
+        >
+          <fa-icon [icon]="lang.faIcon"></fa-icon>
+        </div>
+        <div>
+          <h5>{{ lang.cName }}</h5>
+          <p>{{ lang.cDescription }}</p>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
