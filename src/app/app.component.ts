@@ -15,8 +15,6 @@ export class AppComponent implements OnInit {
   selected: Profile;
   scores: LoveLangScores;
 
-  constructor(private viewportScroller: ViewportScroller) { }
-
   ngOnInit(): void {
     this.changeProfile(this.profiles[0]);
   }
@@ -27,6 +25,10 @@ export class AppComponent implements OnInit {
   }
 
   scrollTo(id: string): void {
-    this.viewportScroller.scrollToAnchor(id);
+    const ele = document.querySelector(`#${id}`)
+
+    if (ele) {
+      ele.scrollIntoView({ behavior: 'smooth' });
+    }
   }
 }

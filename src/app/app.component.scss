@@ -58,6 +58,8 @@ main section {
   width: var(--bar-width);
   height: 300px;
   border-radius: 12px;
+  margin: var(--bar-margin);
+  margin-bottom: calc(0.75rem * 1.2 * 3 + 4px);
 
   position: relative;
 
@@ -115,6 +117,34 @@ main section {
 .bar:nth-child(5) .score-number,
 .lang:nth-child(5) .icon {
   background-color: var(--touch);
+}
+.bar::after {
+  width: calc(var(--bar-width) + var(--bar-margin));
+
+  position: absolute;
+  bottom: calc(0.75rem * 1.2 * -2 - 4px);
+  left: calc(var(--bar-margin) * -1 / 2);
+  right: calc(var(--bar-margin) * -1 / 2);
+
+  text-align: center;
+  font-size: 0.75rem;
+  line-height: 1.2;
+  white-space: pre-wrap;
+}
+.bar:nth-child(1)::after {
+  content: '肯定的\A言詞';
+}
+.bar:nth-child(2)::after {
+  content: '精心的\A時刻';
+}
+.bar:nth-child(3)::after {
+  content: '接受\A禮物';
+}
+.bar:nth-child(4)::after {
+  content: '服務的\A行動';
+}
+.bar:nth-child(5)::after {
+  content: '身體的\A接觸';
 }
 
 // langs

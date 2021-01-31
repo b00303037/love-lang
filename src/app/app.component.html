@@ -17,9 +17,9 @@
   <main
     class="d-flex flex-column flex-md-row justify-content-center align-items-center"
   >
-    <section class="w-100 w-md-50 d-flex justify-content-center py-3 px-md-3">
+    <section class="w-100 w-md-50 d-flex justify-content-center px-md-3">
       <!-- 肯定的言詞 -->
-      <div class="bar mx-3">
+      <div class="bar">
         <div
           class="score"
           [style.height]="(scores.words * 100) / 12 + '%'"
@@ -34,7 +34,7 @@
       </div>
 
       <!-- 精心的時刻 -->
-      <div class="bar mx-3">
+      <div class="bar">
         <div
           class="score"
           [style.height]="(scores.time * 100) / 12 + '%'"
@@ -49,7 +49,7 @@
       </div>
 
       <!-- 接受禮物 -->
-      <div class="bar mx-3">
+      <div class="bar">
         <div
           class="score"
           [style.height]="(scores.gifts * 100) / 12 + '%'"
@@ -64,7 +64,7 @@
       </div>
 
       <!-- 服務的行動 -->
-      <div class="bar mx-3">
+      <div class="bar">
         <div
           class="score"
           [style.height]="(scores.acts * 100) / 12 + '%'"
@@ -79,7 +79,7 @@
       </div>
 
       <!-- 身體的接觸 -->
-      <div class="bar mx-3">
+      <div class="bar">
         <div
           class="score"
           [style.height]="(scores.touch * 100) / 12 + '%'"
@@ -95,12 +95,12 @@
     </section>
 
     <section
-      class="w-100 w-md-50 d-flex flex-column justify-content-center py-3 px-md-3"
+      class="w-100 w-md-50 d-flex flex-column justify-content-center px-md-3"
     >
       <div
         *ngFor="let lang of langs"
         [id]="lang.id"
-        class="lang d-flex align-items-start"
+        class="lang d-flex align-items-start py-2"
       >
         <div
           class="icon flex-shrink-0 d-flex justify-content-center align-items-center mt-3 mr-3"
@@ -110,7 +110,7 @@
         <div>
           <h6 class="font-weight-bold">{{ lang.cName }}</h6>
           <h6 class="font-weight-bold">{{ lang.eName }}</h6>
-          <p>{{ lang.cDescription }}</p>
+          <p class="m-0">{{ lang.cDescription }}</p>
         </div>
       </div>
     </section>

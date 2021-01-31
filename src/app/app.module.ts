@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -11,9 +10,6 @@ import { RouterModule } from '@angular/router';
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot([], {
-      anchorScrolling: 'enabled',
-    }),
     FontAwesomeModule,
   ],
   providers: [],
