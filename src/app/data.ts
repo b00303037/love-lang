@@ -16,6 +16,7 @@ export interface LoveLangScores {
 }
 
 export interface LoveLang {
+  id: string;
   cName: string;
   eName: string;
   cDescription: string;
@@ -101,30 +102,35 @@ export const PROFILES: Profile[] = [
 
 export const LOVE_LANGS: LoveLang[] = [
   {
+    id: 'words',
     cName: '肯定的言詞',
     eName: 'Words of Affirmation',
     cDescription: '想要說肯定的言詞，就必須學會用正面的態度處理心中的傷痛及憤怒。',
     faIcon: faComment,
   },
   {
+    id: 'time',
     cName: '精心的時刻',
     eName: 'Quality Time',
     cDescription: '精心時刻隱含的意義是：「我在乎你，你也在乎我。我們喜歡兩人在一起的感覺。」',
     faIcon: faClock,
   },
   {
+    id: 'gifts',
     cName: '接受禮物',
     eName: 'Receiving Gifts',
     cDescription: '重要的不是禮物本身，而是籍禮物所傳達的愛。',
     faIcon: faGift,
   },
   {
+    id: 'acts',
     cName: '服務的行動',
     eName: 'Acts of Service',
     cDescription: '服務的行動是真心誠意的付出，不是出於害怕，而是自由意志的選擇。',
     faIcon: faPeopleCarry,
   },
   {
+    id: 'touch',
     cName: '身體的接觸',
     eName: 'Physical Touch',
     cDescription: '你必須了解你要觸摸的對象，到底何種形式的觸摸對他／她來說才代表愛。',

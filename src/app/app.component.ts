@@ -22,4 +22,12 @@ export class AppComponent implements OnInit {
     this.selected = selected;
     this.scores = { ...this.selected.scores };
   }
+
+  scrollTo(id: string): void {
+    const ele = document.querySelector(id);
+
+    if (ele) {
+      ele.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
 }
