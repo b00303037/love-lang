@@ -1,3 +1,4 @@
+import { ViewportScroller } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 
 import { PROFILES, LOVE_LANGS, Profile, LoveLang, LoveLangScores } from './data';
@@ -14,6 +15,8 @@ export class AppComponent implements OnInit {
   selected: Profile;
   scores: LoveLangScores;
 
+  constructor(private viewportScroller: ViewportScroller) { }
+
   ngOnInit(): void {
     this.changeProfile(this.profiles[0]);
   }
@@ -24,10 +27,6 @@ export class AppComponent implements OnInit {
   }
 
   scrollTo(id: string): void {
-    const ele = document.querySelector(id);
-
-    if (ele) {
-      ele.scrollIntoView({ behavior: 'smooth' });
-    }
+    this.viewportScroller.scrollToAnchor(id);
   }
 }
